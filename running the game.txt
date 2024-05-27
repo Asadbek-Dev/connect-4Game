@@ -1,0 +1,64 @@
+Running the Game
+To run the game, follow these steps:
+
+1.Download the Game Code: Ensure you have the main.py file saved on your computer.
+2.Open a Terminal: Open a terminal or command prompt on your computer.
+3.Navigate to the Directory: Use the terminal to navigate to the directory where the main.py file is saved. You can use the cd command to change directories. For example:cd path/to/your/directory
+4.Run the Game: Execute the following command to run the game:python main.py
+
+Playing the Game
+
+At the start of the game, you will be prompted to choose between two modes:
+
+1.Single Player mode (against AI)
+2.Two Player mode (against another human) 
+
+Single Player Mode
+
+1.Press 1 for Single Player mode.
+2.You will play with red discs, and the AI will play with yellow discs.
+3.To place a disc, move the mouse over the column where you want to drop the disc and click.
+
+Two Player Mode
+
+1.Press 2 for Two Player mode.
+2.The first player will play with red discs, and the second player will play with yellow discs.
+3.To place a disc, move the mouse over the column where you want to drop the disc and click.
+
+Game Rules
+
+1.Players take turns dropping discs into the columns.
+2.The goal is to connect four of your discs in a row, either horizontally, vertically, or diagonally.
+3.The first player to connect four discs wins the game.
+
+Code Structure
+
+Here's a brief overview of the main functions and what they do:
+
+create_board(): Creates an empty game board with 6 rows and 7 columns. It's like setting up the game board before starting to play.
+
+drop_piece(board, row, col, piece): This function places a piece (either player or AI) on the board at the specified row and column.
+
+is_valid_location(board, col): This function checks if a column has space for another piece (i.e., if it's not full).
+
+get_next_open_row(board, col): This function finds the next available row in a column where a piece can be dropped.
+
+winning_move(board, piece): This function checks if the current move is a winning move. It looks for four connected pieces horizontally, vertically, or diagonally.
+
+draw_board(board): This function visually represents the game board using the Pygame library. It draws the board and pieces on the screen.
+
+evaluate_window(window, piece): This function evaluates a set of four consecutive positions (a window) on the board and scores it based on how advantageous it is for the player or AI.
+
+score_position(board, piece): This function calculates a score for the entire board based on the positions of pieces. It helps the AI decide the best move.
+
+is_terminal_node(board): This function checks if the game has ended either by a win or because the board is full.
+
+minimax(board, depth, alpha, beta, maximizing_player): This is the Minimax algorithm with alpha-beta pruning. It helps the AI decide the best move by simulating future moves and their outcomes up to a certain depth.
+
+get_valid_locations(board): This function returns a list of columns where a piece can be legally dropped (i.e., columns that are not full).
+
+end_game(): This function ends the game and closes the game window.
+
+draw_menu(): This function draws the initial menu to choose the game mode (Single Player or Two Player).
+
+update_move_display(move_time=None): This function updates the display with the current number of moves and the time taken for the last move (if applicable).
