@@ -163,11 +163,7 @@ def score_position(board, piece):
 def is_terminal_node(board):
     return winning_move(board, PLAYER_PIECE) or winning_move(board, AI_PIECE) or len(get_valid_locations(board)) == 0
 
-# The algorithm calculating the best move to make given a depth of the search tree.
-# Depth is how many layers algorithm scores boards. Complexity grows exponentially.
-# Alpha and beta are best scores a side can achieve assuming the opponent makes the best play.
-# More on alpha-beta pruning here: https://www.youtube.com/watch?v=l-hh51ncgDI.
-# maximizing_palyer is a boolean value that tells whether we are maximizing or minimizing
+
 # in this implementation, AI is maximizing.
 def minimax(board, depth, alpha, beta, maximizing_player):
     # all valid locations on the board
